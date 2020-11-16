@@ -1,0 +1,21 @@
+az5 - Monitor a GPIO and run shell commands if it changes
+=========================================================
+
+We use it to respond to thermal warnings and alerts, and to DCDC alerts.
+
+Usage example:
+
+az5 14 'alert y' 'alert n'
+
+This monitors the USER button, flashes the RGB LED if pressed, and
+returns to steady green when releasing the button.
+
+Pin numbers of interest:
+LC001.04				LC001.05
+14	USER button			31
+89	SLOT_0_TWARN	(EMIO 35)	39
+90	SLOT_1_TWARN	(36)		37
+91	SLOT_0_TSHUT	(37)		33
+92	SLOT_1_TSHUT	(38)		38
+93	SLOT_0_SALRT	(39)		35
+94	SLOT_1_SALRT	(40)		34
