@@ -1,7 +1,13 @@
 az5 - Monitor a GPIO and run shell commands if it changes
 =========================================================
 
-We use it to respond to thermal warnings and alerts, and to DCDC alerts.
+Copyright (C) 2021 Linzhi Ltd.
+
+This work is licensed under the terms of the MIT License.
+A copy of the license can be found in the file COPYING.txt
+
+
+We use az5 to respond to thermal warnings and alerts, and to DCDC alerts.
 
 Usage example:
 
