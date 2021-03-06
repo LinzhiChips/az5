@@ -113,7 +113,15 @@ static void update(struct gpiod_line_bulk *bulk)
 	unsigned all_up = (1 << n_lines) - 1;
 	bool was_on = 0;
 
-	while (gpio_read(bulk) != all_up) {
+	while (1) {
+		unsigned current = gpio_read(bulk);
+		char active[10 + 1];	 /* good for up to 32 bits */
+
+		if (current == all_up)
+			break;
+		sprintf(active, "%u", current ^ all_up);
+		if (setenv("AZ5_ACTIVE", active, 1) < 0)
+			perror("setenv");
 		system(while_on_command);
 		was_on = 1;
 	}
