@@ -211,8 +211,8 @@ static void usage(const char *name)
 	fprintf(stderr,
 "usage: %s [-g 1|2] gpio ... while-on-command off-command\n\n"
 "-g 1|2\n"
-"    board generation (default: 1)\n"
-    , name);
+"    board generation (default: %u)\n"
+    , name, 1 + (gpio_map == gpio_map_gen2));
 
 	fprintf(stderr, "GPIO names:\n");
 	for (i = 0; gpio_map[i].name; i++) {
