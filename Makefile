@@ -5,6 +5,8 @@
 # A copy of the license can be found in the file COPYING.txt
 #
 
+CC = arm-linux-gcc
+
 .PHONY:		all clean spotless
 
 CFLAGS = -Wall -Wextra -Wshadow -Wmissing-prototypes -Wmissing-declarations
